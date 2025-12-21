@@ -8,8 +8,8 @@ venv/
 env/
 ENV/
 
-# Model files (optional - uncomment if models are too large)
-# *.joblib
+# Model files (too large for GitHub - train locally)
+*.joblib
 
 # Uploaded images
 static/*.jpg
