@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🚦 Traffic Sign Classification (HOG + KNN)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🚦 Traffic Sign Classifier (HOG + KNN)</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="upload-form text-center">
+      <input type="file" name="file" accept="image/*" class="form-control mb-3" required>
+      <button type="submit" class="btn btn-custom">Upload & Predict</button>
+    </form>
+
+    {% if filename %}
+  <div class="preview">
+    <h4>Uploaded Image</h4>
+    <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+  </div>
+
+  <div class="result-box">
+    <h4>Prediction Result</h4>
+    <table class="table table-bordered table-striped mt-3">
+      <thead class="table-primary">
+        <tr>
+          <th>Label</th>
+          <th>Predicted Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ClassId</td>
+          <td>{{ pred_class }} – <strong>{{ class_name }}</strong></td>
+        </tr>
+        <tr>
+          <td>ShapeId</td>
+          <td>{{ pred_shape }}</td>
+        </tr>
+        <tr>
+          <td>ColorId</td>
+          <td>{{ pred_color }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endif %}
+
+  </div>
+
+  <footer>
+    <p>Built with ❤️ using Flask, OpenCV (HOG), and scikit-learn (KNN)</p>
+  </footer>
+</body>
+</html>

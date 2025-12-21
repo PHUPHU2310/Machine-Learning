@@ -1,0 +1,34 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Uploaded images
+static/uploads/
+static/*.jpg
+static/*.png
+static/*.ppm
+
+# Model files (nếu quá lớn, có thể bỏ comment)
+# *.joblib
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CSV data (nếu quá lớn)
+# Train/
+# Test/
